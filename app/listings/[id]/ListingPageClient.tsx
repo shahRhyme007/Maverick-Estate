@@ -165,11 +165,29 @@ export default function ListingPageClient() {
                     <CardContent>
                       <div className="grid gap-4">
                         {[
-                          { icon: Shield, title: "Crime Rate", value: "Low", desc: "15% below city average" },
-                          { icon: School, title: "School Rating", value: "8/10", desc: "Top-rated district" },
-                          { icon: Car, title: "Traffic Score", value: "Good", desc: "Average commute: 25 mins" }
+                          {
+                            icon: Shield,
+                            title: "Crime Rate",
+                            value: "Low",
+                            desc: "15% below city average",
+                          },
+                          {
+                            icon: School,
+                            title: "School Rating",
+                            value: "8/10",
+                            desc: "Top-rated district",
+                          },
+                          {
+                            icon: Car,
+                            title: "Traffic Score",
+                            value: "Good",
+                            desc: "Average commute: 25 mins",
+                          },
                         ].map((item, index) => (
-                          <div key={index} className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                          <div
+                            key={index}
+                            className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg"
+                          >
                             <item.icon className="w-8 h-8 text-primary" />
                             <div>
                               <h3 className="font-semibold">{item.title}</h3>
@@ -182,6 +200,7 @@ export default function ListingPageClient() {
                     </CardContent>
                   </Card>
                 </TabsContent>
+
                 <TabsContent value="schools">
                   <Card>
                     <CardHeader>
@@ -190,26 +209,37 @@ export default function ListingPageClient() {
                     </CardHeader>
                     <CardContent>
                       <div className="grid gap-4">
-                        <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                          <School className="w-8 h-8 text-primary" />
-                          <div>
-                            <h3 className="font-semibold">Greenwood High School</h3>
-                            <p className="text-gray-600">Rating: 9/10</p>
-                            <p className="text-gray-600">Distance: 1.2 miles</p>
+                        {[
+                          {
+                            icon: School,
+                            title: "Greenwood High School",
+                            value: "9/10",
+                            desc: "Distance: 1.2 miles",
+                          },
+                          {
+                            icon: School,
+                            title: "Sunnyvale Elementary",
+                            value: "8/10",
+                            desc: "Distance: 0.8 miles",
+                          },
+                        ].map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg"
+                          >
+                            <item.icon className="w-8 h-8 text-primary" />
+                            <div>
+                              <h3 className="font-semibold">{item.title}</h3>
+                              <p className="text-2xl font-bold my-1">{item.value}</p>
+                              <p className="text-gray-600">{item.desc}</p>
+                            </div>
                           </div>
-                        </div>
-                        <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                          <School className="w-8 h-8 text-primary" />
-                          <div>
-                            <h3 className="font-semibold">Sunnyvale Elementary</h3>
-                            <p className="text-gray-600">Rating: 8/10</p>
-                            <p className="text-gray-600">Distance: 0.8 miles</p>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </CardContent>
                   </Card>
                 </TabsContent>
+
                 <TabsContent value="commute">
                   <Card>
                     <CardHeader>
@@ -218,26 +248,37 @@ export default function ListingPageClient() {
                     </CardHeader>
                     <CardContent>
                       <div className="grid gap-4">
-                        <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                          <Car className="w-8 h-8 text-primary" />
-                          <div>
-                            <h3 className="font-semibold">Public Transit</h3>
-                            <p className="text-gray-600">Bus Stop: 0.3 miles</p>
-                            <p className="text-gray-600">Train Station: 1.5 miles</p>
+                        {[
+                          {
+                            icon: Car,
+                            title: "Public Transit",
+                            value: "Bus Stop: 0.3 miles",
+                            desc: "Train Station: 1.5 miles",
+                          },
+                          {
+                            icon: Car,
+                            title: "Driving",
+                            value: "Average commute: 25 mins",
+                            desc: "Traffic: Moderate",
+                          },
+                        ].map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg"
+                          >
+                            <item.icon className="w-8 h-8 text-primary" />
+                            <div>
+                              <h3 className="font-semibold">{item.title}</h3>
+                              <p className="text-2xl font-bold my-1">{item.value}</p>
+                              <p className="text-gray-600">{item.desc}</p>
+                            </div>
                           </div>
-                        </div>
-                        <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                          <Car className="w-8 h-8 text-primary" />
-                          <div>
-                            <h3 className="font-semibold">Driving</h3>
-                            <p className="text-gray-600">Average commute: 25 mins</p>
-                            <p className="text-gray-600">Traffic: Moderate</p>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </CardContent>
                   </Card>
                 </TabsContent>
+
               </Tabs>
             </motion.div>
           </div>
